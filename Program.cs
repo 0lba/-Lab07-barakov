@@ -61,7 +61,7 @@
 // }
 // Console.WriteLine("");
 // Console.WriteLine(ch);
-//задание 6(доделать)
+//задание 6
 // string[] names = { "Анна", "Игорь", "Мария", "Олег", "Ольга" };
 // string a = Console.ReadLine();
 // int index = -1;
@@ -77,34 +77,40 @@
 //     Console.WriteLine("Не найдено");
 // }
 //задание 7
-int[] grades = {2, 3, 4, 5, 2, 3, 2, 4};
-int sum = 0;
-int max = grades[0];
-int min = grades[0];
-int c2 = 0;
-int c5 = 0;
-foreach (int i in grades){
-    sum += i;
-    if (i < min){
-        if (grades[i] == 2){
-            c2++
-        }else if (grades[i] == 5){
-            c5++;
-        }
-        min = grades[i];
-        }
-    }else if(i > max){
-        if (grades[i] == 2)
-        max = grades[i];
-    }
-    // if (grades[i] == 2){
-    //     c2++;
-    // }else if (grades[i] == 5){
-    //     c5++;
-    // }
-    Console.Write($"{i} ");
+// int[] grades = { 2, 3, 4, 5, 2, 3, 2, 4 };
+// int sum = 0;
+// int max = grades[0];
+// int min = grades[0];
+// int c2 = 0;
+// int c5 = 0;
+// foreach (int i in grades)
+// {
+//     Console.Write($"{i} ");
+//     sum += i;
+//     if (i > max) max = i;
+//     if (i < min) min = i;
+//     if (i == 2) c2++;
+//     else if (i == 5) c5++;
+// }
+// Console.WriteLine();
+// double average = (double)sum / grades.Length;
+// Console.WriteLine($"Средняя оценка: {average}");
+// Console.WriteLine($"Наибольшая: {max}, наименьшая: {min}");
+// Console.WriteLine($"Двоек: {c2}, пятёрок: {c5}");
+// if (average >= 4.5)
+//     Console.WriteLine("Отличник");
+// else if (average >= 3.5)
+//     Console.WriteLine("Хорошист");
+// else
+//     Console.WriteLine("Есть над чем поработать");
+//задание 8
+int[] arr = { 1, 2, 3, 4, 5, 6 };
+foreach (int i in arr) Console.Write($"{i}");
+for (int i = 0; i < arr.Length / 2; i++)
+{
+    int a = arr[i];
+    arr[i] = arr[arr.Length - 1 - i];
+    arr[arr.Length - 1 - i] = a;
 }
-Console.WriteLine("");
-Console.WriteLine((double)sum / grades.Length);
-Console.WriteLine($"max: {max}, min: {min}");
-Console.WriteLine($"2: {c2}, 5: {c5}");
+Console.WriteLine();
+foreach (int i in arr) Console.Write($"{i}");
